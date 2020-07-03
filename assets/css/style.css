@@ -1,8 +1,14 @@
 body {
-    background-color: navy;
+    background-color: whitesmoke
     color: white;
 }
 
 .my-table {
     border: solid 1px;
+}
+
+button{
+    height: 40px;
+    width: 200px;
+    
 }

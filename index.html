@@ -12,7 +12,7 @@
 
   <link href="./assets/css/style.css" rel="stylesheet">
   <script type="text/javascript" src="./assets/js/utils.js"></script>
-  <script type="text/javascript" src="./assets/js/numbers.js"></script>
+  <script type="text/javascript" src="./assets/js/solution.js"></script>
   <script type="text/javascript" src="./assets/js/header-functions.js"></script>
 
 </head> <!-- header ends here -->
@@ -34,7 +34,35 @@
 <!-- ---------------------------------------------------------------------------------- -->
 <!-- ---------------------------------------------------------------------------------- -->
 <!-- ---------------------------------------------------------------------------------- -->
-<body> <!-- body begins here -->
+<body style="text-align: center;" > <!-- body begins here -->
+
+
+  <p>Step 1: Open cmudict.0.7a</p>
+  <input type='file' accept='text/plain' onchange='openFile(event)'><br>
+  <img id='output'>
+  <script>
+    var openFile = function(event) {
+      var input = event.target;
+  
+      var reader = new FileReader();
+      reader.onload = function(){
+        var text = reader.result;
+        getWords(text);
+      };
+      reader.readAsText(input.files[0]);
+    };
+  </script>
+<script>
+  word = new Word("");
+</script>
+
+<div class="container" style= "text-align: center;">
+  <p>Step 2: Create new Word object</p>
+  <button type = "button" onclick="word.setWord()">Create new word</button>
+</div>
+<p>Step 3: Print all methods</p>
+<button   onclick="word.toString()"> toString()</button>
+
 
   <!-- ====================================================== -->
   <!-- ====================================================== -->
